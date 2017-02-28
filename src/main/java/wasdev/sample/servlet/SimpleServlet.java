@@ -40,14 +40,14 @@ public class SimpleServlet extends HttpServlet {
     }
 
     
-    private String AnalyzeTone(String text) {
+    private ToneAnalysis AnalyzeTone(String text) {
     ToneAnalyzer service = new ToneAnalyzer(ToneAnalyzer.VERSION_DATE_2016_05_19);
     service.setUsernameAndPassword("b5cd853e-e974-416b-9448-0d6d4697a882", "pXYljtxiZqlT");
 
     // Call the service and get the tone
     ToneAnalysis tone = service.getTone(text, null).execute();
     System.out.println(tone);
-    return (tone.toString());
+    return (tone);
     }
     
 }
